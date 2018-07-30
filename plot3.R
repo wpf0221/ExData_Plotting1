@@ -1,3 +1,9 @@
+# download data file to the source file location
+fileUrl <- 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip'
+download.file(fileUrl, destfile = 'household_power_consumption.zip')
+# unzip file
+unzip('household_power_consumption.zip')
+
 # read data from file
 files <- file('household_power_consumption.txt')
 data <- read.table(text = grep("^[1,2]/2/2007",readLines(files),value=TRUE), 
